@@ -1,0 +1,70 @@
+body{
+    font-family: 'Roboto';
+    background-image: linear-gradient(lightgreen, aqua);
+}
+
+#FullCart{
+    position: relative;
+    bottom: 40px;
+}
+
+#CartText{
+    font-size: 50pt;
+}
+
+#YourOrderText{
+    font-size: 30pt;
+}
+
+#SizeTitleText{
+    font-size: 22pt;
+    position: relative;
+    bottom: -10px;
+}
+
+#PizzaSize{
+    font-size: 20pt;
+    position: relative;
+    bottom: -25px;
+    left: 15px;
+}
+
+#SauceTitleText{
+    font-size: 22pt;
+    position: relative;
+    bottom: -40px;
+}
+
+#PizzaSauce{
+    font-size: 20pt;
+    position: relative;
+    bottom: -60px;
+    right: -14px;
+}
+
+#ToppingsTitleText{
+    font-size: 22pt;
+    position: relative;
+    bottom: -80px;
+}
+
+.PizzaToppings{
+    font-size: 22pt;
+    position: relative;
+    bottom: -100px;
+    right: -20px;
+}
+
+#TotalTitleText{
+    font-size: 22pt;
+    position: relative;
+    bottom: -110px;
+    right: 15px;
+}
+
+#TotalPrice{
+    font-size: 20pt;
+    position: relative;
+    bottom: -120px;
+    right: -54px;
+}
