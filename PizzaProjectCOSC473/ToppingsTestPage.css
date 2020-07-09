@@ -3,10 +3,6 @@ Body{
     background-image: linear-gradient(lightgreen, aqua);
 }
 
-.OrderForm{
-    border-style: groove;
-}
-
 #ShopIcon{
     position: relative;
     width: 11%;
@@ -45,7 +41,7 @@ Body{
 
 #PizzaSizes{
     position: relative;
-    bottom: 80px;
+    bottom: 20px;
 }
 
 #smallIcon{

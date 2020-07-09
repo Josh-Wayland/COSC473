@@ -3,68 +3,115 @@ body{
     background-image: linear-gradient(lightgreen, aqua);
 }
 
+#ShopIcon{
+    width: 11%;
+}
+
 #FullCart{
-    position: relative;
-    bottom: 40px;
+    position: relative; 
+    bottom: 100px;
 }
 
 #CartText{
+    position: relative; 
+    bottom: 50px;
     font-size: 50pt;
 }
 
 #YourOrderText{
     font-size: 30pt;
+    list-style-type: none;
 }
 
 #SizeTitleText{
     font-size: 22pt;
     position: relative;
-    bottom: -10px;
+    list-style-type: none;
+    text-decoration: underline;
 }
 
 #PizzaSize{
     font-size: 20pt;
+    margin-top: 5px;
     position: relative;
-    bottom: -25px;
-    left: 15px;
+    text-decoration: none;
 }
 
 #SauceTitleText{
     font-size: 22pt;
     position: relative;
-    bottom: -40px;
+    list-style-type: none;
+    text-decoration: underline;
+}
+
+.PizzaSizeSaucePrice{
+    position: relative; 
+    font-size: 22pt; 
+    bottom: 33px; 
+    left: 200px; 
+    list-style-type: none;
+    text-decoration: none;
 }
 
 #PizzaSauce{
     font-size: 20pt;
     position: relative;
-    bottom: -60px;
-    right: -14px;
+    margin-top: 5px;
+    text-decoration: none;
 }
 
 #ToppingsTitleText{
     font-size: 22pt;
     position: relative;
-    bottom: -80px;
+    list-style-type: none;
+    text-decoration: underline;
 }
 
 .PizzaToppings{
     font-size: 22pt;
     position: relative;
-    bottom: -100px;
-    right: -20px;
+}
+
+.PizzaToppingsPrice{
+    position: relative; 
+    font-size: 22pt; 
+    bottom: 33px; 
+    left: 200px; 
+    list-style-type: none;
 }
 
 #TotalTitleText{
     font-size: 22pt;
     position: relative;
-    bottom: -110px;
-    right: 15px;
+    list-style-type: none;
+    text-decoration: underline;
 }
 
 #TotalPrice{
     font-size: 20pt;
+    margin-top: 5px;
     position: relative;
-    bottom: -120px;
-    right: -54px;
+}
+
+#BackToToppings{
+    position: relative; 
+    bottom: 85px; 
+    left: 500px; 
+    font-size: 22pt; 
+    width: 7em; 
+    height: 2em; 
+    border: 50px;
+    border-radius: 50px;
+    border-style: unset;
+}
+
+#Checkout{
+    position: relative; 
+    bottom: 144px; 
+    left: 800px; 
+    font-size: 22pt; 
+    width: 7em; 
+    height: 2em; 
+    border-radius: 50px; 
+    border-style: unset;
 }

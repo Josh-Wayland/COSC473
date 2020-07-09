@@ -9,10 +9,10 @@
 
     <body>
         <link rel="stylesheet" href="ToppingsTestPage.css">
-        <div id="titlebar">
+        <center><div id="titlebar">
             <img id="ShopIcon" src="images/CutePizzaShopIcon.jpg">
-        </div>
-        <form class="OrderForm" action="Cart.php" method="post">
+        </div></center>
+        <form class="OrderForm" action="CartTestPage.php" method="post">
             <div id="PizzaSizes">
             <center><h1 id="Title">
                 Sizes
@@ -28,7 +28,6 @@
                 <img id="largeIcon" src="images/PizzaSizeIcons.jpg" onclick="LargeIconChecked();"> <!--Add onmouseover and onclick-->
                 <div id="largetext">Large</div>
                 <input type="checkbox" name="largepizza" id="checkboxlarge"/>
-
             </div>
         
             <div id="SauceAndToppings">
@@ -66,10 +65,8 @@
             
                         <center><button id="Finish" onclick="">Finish</button></center>
                 </div> <!--Sauce end div-->
-            
         </div> <!--Sauce and toppings end div-->
     </form>
     <center><button id="ToSauces" onclick="MoveToSauce();">Sauces</button></center>
     </body>
-
 </html>

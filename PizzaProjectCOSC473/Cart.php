@@ -18,34 +18,34 @@
         //Pizza Sizes
         if(isset($_POST["smallpizza"]))
         {
-            $PizzaSizeText = "Small Pizza";
+            $PizzaSizeText = "- Small Pizza";
         }
         else if(isset($_POST["mediumpizza"]))
         {
-            $PizzaSizeText = "Medium Pizza";
+            $PizzaSizeText = "- Medium Pizza";
         }
         else
         {
-            $PizzaSizeText = "Large Pizza";
+            $PizzaSizeText = "- Large Pizza";
         }
 
         //Pizza Sauces
         if(isset($_POST["TomatoSauce"]))
         {
-            $PizzaSauceText = "Tomato Sauce";
+            $PizzaSauceText = "- Tomato Sauce";
         }
         else if(isset($_POST["AlfredoSauce"]))
         {
-            $PizzaSauceText = "Alfredo Sauce";
+            $PizzaSauceText = "- Alfredo Sauce";
         }
         else{
-            $PizzaSauceText = "No Sauce";
+            $PizzaSauceText = "- No Sauce";
         }
         
         //Toppings
         if(isset($_POST["PepperoniTopping"]))
         {
-            $PepperoniText = "Pepperoni";
+            $PepperoniText = "- Pepperoni";
         }
         else
         {
@@ -53,7 +53,7 @@
         }
         if(isset($_POST["SausageTopping"]))
         {
-            $SausageText = "Sausage";
+            $SausageText = "- Sausage";
         }
         else
         {
@@ -61,7 +61,7 @@
         }
         if(isset($_POST["ChickenTopping"]))
         {
-            $ChickenText = "Chicken";
+            $ChickenText = "- Chicken";
         }
         else
         {
@@ -69,7 +69,7 @@
         }
         if(isset($_POST["HamTopping"]))
         {
-            $HamText = "Ham";
+            $HamText = "- Ham";
         }
         else
         {
@@ -77,7 +77,7 @@
         }
         if(isset($_POST["PineappleTopping"]))
         {
-            $PineappleText = "Pineapple";
+            $PineappleText = "- Pineapple";
         }
         else
         {
@@ -88,7 +88,7 @@
         <div>Top bar</div>
         <center><p id="CartText"> Cart </p></center>
         <div id="FullCart">
-        <center><table>
+        <table>
             <tr id="YourOrderText">
                 <th>Your Order</th>
             </tr>
@@ -126,7 +126,7 @@
                     <td id="TotalPrice"> $50</td>
                 </tr>
             </tr>
-        </table></center>
+        </table>
     </div>
   </body>
 </html>  
