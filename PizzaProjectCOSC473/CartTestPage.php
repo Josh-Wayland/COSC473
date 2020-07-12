@@ -6,39 +6,58 @@
   <link rel="stylesheet" href="Cart.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
       <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "pizzapoloza";
+        // Create connection
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+	    
+        
+        // Check connection
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
         $PizzaSizeText;
-        $PizzaSizePrice = 5.25;
+        $PizzaSizePrice = 0;
         $PizzaSauceText;
-        $PizzaSaucePrice = 2.25;
+        $PizzaSaucePrice = 0;
         $PepperoniText;
         $SausageText;
         $ChickenText;
         $HamText;
         $PineappleText;
-        $Total = 50;
+        $ToppingsPrice = 0;
+        $Total = 0;
 
         //Pizza Sizes
         if(isset($_POST["smallpizza"]))
         {
             $PizzaSizeText = "Small Pizza";
+            $PizzaSizePrice = 5.00;
         }
         else if(isset($_POST["mediumpizza"]))
         {
             $PizzaSizeText = "Medium Pizza";
+            $PizzaSizePrice = 7.00;
         }
         else
         {
             $PizzaSizeText = "Large Pizza";
+            $PizzaSizePrice = 9.00;
         }
 
         //Pizza Sauces
         if(isset($_POST["TomatoSauce"]))
         {
             $PizzaSauceText = "Tomato Sauce";
+            $PizzaSaucePrice = 0;
         }
         else if(isset($_POST["AlfredoSauce"]))
         {
             $PizzaSauceText = "Alfredo Sauce";
+            $PizzaSaucePrice = 2.50;
         }
         else{
             $PizzaSauceText = "No Sauce";
@@ -48,6 +67,7 @@
         if(isset($_POST["PepperoniTopping"]))
         {
             $PepperoniText = "Pepperoni";
+            $ToppingsPrice = $ToppingsPrice + 0;
         }
         else
         {
@@ -56,6 +76,7 @@
         if(isset($_POST["SausageTopping"]))
         {
             $SausageText = "Sausage";
+            $ToppingsPrice = $ToppingsPrice + 1.00;
         }
         else
         {
@@ -64,6 +85,7 @@
         if(isset($_POST["ChickenTopping"]))
         {
             $ChickenText = "Chicken";
+            $ToppingsPrice = $ToppingsPrice + 1.00;
         }
         else
         {
@@ -72,6 +94,7 @@
         if(isset($_POST["HamTopping"]))
         {
             $HamText = "Ham";
+            $ToppingsPrice = $ToppingsPrice + 1.00;
         }
         else
         {
@@ -80,11 +103,22 @@
         if(isset($_POST["PineappleTopping"]))
         {
             $PineappleText = "Pineapple";
+            $ToppingsPrice = $ToppingsPrice + 1.00;
         }
         else
         {
             $PineappleText = "No Pineapple";
         }
+        $Total = $PizzaSaucePrice + $PizzaSizePrice + $ToppingsPrice;
+
+        $sql = "INSERT INTO `nousername`(`toppings`, `sauce`, `size`, `total`) VALUES ( $ToppingsPrice, $PizzaSaucePrice, $PizzaSizePrice, $Total)";
+
+        if ($conn->query($sql) === TRUE) {
+         echo "New record created successfully";
+        } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
         ?>
         
         <div>
@@ -111,7 +145,7 @@
                 </ul>
             </ul>
             <ul>
-                <li id="ToppingsTitleText">Toppings (All Toppings are $... each)</li>
+                <li id="ToppingsTitleText">Toppings (All Toppings are $ 1.00 each)</li>
                 <ul>
                     <li class="PizzaToppings"> <?= $PepperoniText ?> </li>
                     <!-- <li class="PizzaToppingsPrice"> $</?= $PizzaSaucePrice ?> </li> -->
