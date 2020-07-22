@@ -7,126 +7,139 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
       <?php
         $PizzaSizeText;
+        $PizzaSizePrice = 5.25;
         $PizzaSauceText;
+        $PizzaSaucePrice = 2.25;
         $PepperoniText;
         $SausageText;
         $ChickenText;
         $HamText;
         $PineappleText;
-        $Total;
+        $Total = 50;
 
         //Pizza Sizes
         if(isset($_POST["smallpizza"]))
         {
-            $PizzaSizeText = "- Small Pizza";
+            $PizzaSizeText = "Small Pizza";
         }
         else if(isset($_POST["mediumpizza"]))
         {
-            $PizzaSizeText = "- Medium Pizza";
+            $PizzaSizeText = "Medium Pizza";
         }
         else
         {
-            $PizzaSizeText = "- Large Pizza";
+            $PizzaSizeText = "Large Pizza";
         }
 
         //Pizza Sauces
         if(isset($_POST["TomatoSauce"]))
         {
-            $PizzaSauceText = "- Tomato Sauce";
+            $PizzaSauceText = "Tomato Sauce";
         }
         else if(isset($_POST["AlfredoSauce"]))
         {
-            $PizzaSauceText = "- Alfredo Sauce";
+            $PizzaSauceText = "Alfredo Sauce";
         }
         else{
-            $PizzaSauceText = "- No Sauce";
+            $PizzaSauceText = "No Sauce";
         }
         
         //Toppings
         if(isset($_POST["PepperoniTopping"]))
         {
-            $PepperoniText = "- Pepperoni";
+            $PepperoniText = "Pepperoni";
         }
         else
         {
-            $PepperoniText = "";
+            $PepperoniText = "No Pepperoni";
         }
         if(isset($_POST["SausageTopping"]))
         {
-            $SausageText = "- Sausage";
+            $SausageText = "Sausage";
         }
         else
         {
-            $SausageText = "";
+            $SausageText = "No Sausage";
         }
         if(isset($_POST["ChickenTopping"]))
         {
-            $ChickenText = "- Chicken";
+            $ChickenText = "Chicken";
         }
         else
         {
-            $ChickenText = "";
+            $ChickenText = "No Chicken";
         }
         if(isset($_POST["HamTopping"]))
         {
-            $HamText = "- Ham";
+            $HamText = "Ham";
         }
         else
         {
-            $HamText = "";
+            $HamText = "No Ham";
         }
         if(isset($_POST["PineappleTopping"]))
         {
-            $PineappleText = "- Pineapple";
+            $PineappleText = "Pineapple";
         }
         else
         {
-            $PineappleText = "";
+            $PineappleText = "No Pineapple";
         }
         ?>
         
-        <div>Top bar</div>
+        <div>
+            <center><img id="ShopIcon" src="images/ShopIconTransparent.png"></center>
+        </div>
         <center><p id="CartText"> Cart </p></center>
         <div id="FullCart">
         <table>
-            <tr id="YourOrderText">
-                <th>Your Order</th>
-            </tr>
-            <tr>
-                <th id="SizeTitleText">Size</td>
-                <tr>
-                    <td id="PizzaSize"> <?= $PizzaSizeText ?> </td>
-                </tr>
-            </tr>
-            <tr>
-                <th id="SauceTitleText">Sauce</td>
-                <tr>
-                    <td id="PizzaSauce"> <?= $PizzaSauceText ?> </td>
-                </tr>
-            </tr>
-            <tr>
-                <th id="ToppingsTitleText">Toppings</td>
-                <tr>
-                    <td class="PizzaToppings"> <?= $PepperoniText ?> </td>
-                    <tr>
-                        <td class="PizzaToppings"> <?= $SausageText ?> </td>
-                    </tr>
-                    <tr>
-                        <td class="PizzaToppings"> <?= $ChickenText ?> </td>
-                    </tr>
-                    <tr>
-                        <td class="PizzaToppings"> <?= $HamText ?> </td>
-                    </tr>
-                    <td class="PizzaToppings"> <?= $PineappleText ?> </td>
-                </tr>
-            </tr>
-            <tr>
-                <th id="TotalTitleText">Total</td>
-                <tr>
-                    <td id="TotalPrice"> $50</td>
-                </tr>
-            </tr>
+            <p id="YourOrderText">
+                Your Order
+            </p>
+            <ul>
+                <li id="SizeTitleText">Size</li>
+                <ul>
+                    <li id="PizzaSize"> <?= $PizzaSizeText ?> </li>
+                    <li class="PizzaSizeSaucePrice"> $<?= $PizzaSizePrice ?> </li>
+                </ul>
+            </ul>
+            <ul>
+                <li id="SauceTitleText">Sauce</li>
+                <ul>
+                    <li id="PizzaSauce"> <?= $PizzaSauceText ?> </li>
+                    <li class="PizzaSizeSaucePrice"> $<?= $PizzaSaucePrice ?> </li>
+                </ul>
+            </ul>
+            <ul>
+                <li id="ToppingsTitleText">Toppings (All Toppings are $... each)</li>
+                <ul>
+                    <li class="PizzaToppings"> <?= $PepperoniText ?> </li>
+                    
+                    <li class="PizzaToppings"> <?= $SausageText ?> </li>
+                    
+                    <li class="PizzaToppings"> <?= $ChickenText ?> </li>
+                    
+                    <li class="PizzaToppings"> <?= $HamText ?> </li>
+                    
+                    <li class="PizzaToppings"> <?= $PineappleText ?> </li>
+                </ul>
+            </ul>
+            <ul>
+                <li id="TotalTitleText">Total</li>
+                <ul>
+                    <li id="TotalPrice"> $<?= $Total ?> </li>
+                </ul>
+            </ul>
         </table>
     </div>
+    
+    <form action="Toppings.html">
+        <button id="BackToToppings">Edit Order</button>
+    </form>
+
+    <form action="FinalOrderScreen.php">
+    <button id="Checkout">Checkout</button>
+    </form>
+ 
   </body>
-</html>  
+</html>
