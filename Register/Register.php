@@ -9,7 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 	
-	$fullname = $_POST['fullname']; // or you can use this $email = $_POST['email
+	$fullname = $_POST['name']; // or you can use this $email = $_POST['email
 	$email = $_POST['email'];
 	$pass = $_POST['psw']; 
 

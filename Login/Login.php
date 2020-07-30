@@ -6,39 +6,46 @@ $password = "";
 
 if(isset($_POST['submit'])) {
 
-$formuser = $_POST['username']; 
+$formuser = $_POST['name']; 
 $pass = $_POST['password'];
 
 } else {
 	echo'Kindly fill in fields';
 }
 
-print_r($_POST);
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
-$sql = "SELECT email, username, password FROM login";
-$result = $conn->query($sql);
+} else {
+	// echo'I connected successfully, dad';
+}
+$sql = "SELECT email, name, password FROM login";
+$result = mysqli_query($conn, $sql);
+
+// $row_cnt = $result->num_rows;
 			 
-if ($result->num_rows > 0) {
+if (!$result || mysqli_num_rows($result) > 0) {
     // output data from index
-	print_r($_POST); 
+	$row = $result->fetch_assoc();
+	// print_r($row);
     while($row = $result->fetch_assoc()) {
          $email = $row["email"];
-         $pass = $row["password"];
-	 $username = $row["name"];
-		 if ($username == $formuser and $password == $pass)
+	// print_r($email);
+         $password = $row["password"];
+	// print_r($pass);
+	 $name = $row["name"];
+	// print_r($name);
+		 if ($name == $formuser and $password == $pass)
 		 {	 
-			 header("Location: Hhome/index.php");
+			include 'Redirect.php';
+			echo " $id &nbsp;&nbsp;&nbsp;&nbsp; $email &nbsp;&nbsp;&nbsp;&nbsp;  $password &nbsp;&nbsp;&nbsp;&nbsp; $name &nbsp;&nbsp;&nbsp;&nbsp; <br>";
 		 }
 		 
 		 
     }
-}
-
+} 
 
 
 ?>
